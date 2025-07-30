@@ -7,7 +7,6 @@ import org.openqa.selenium.interactions.Actions;
 import utils.DriverManager;
 import widgets.SearchResults;
 
-import org.junit.validator.PublicClassValidator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
