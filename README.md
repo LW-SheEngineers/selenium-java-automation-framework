@@ -1,202 +1,143 @@
-🖥 Selenium Java Automation Framework
+# 🚀 Selenium Java Automation Framework
 
-📌 Overview
+---
 
-This is a Java-based Selenium WebDriver automation testing framework.
-It uses JUnit 4 as the test runner and follows the Page Object Model (POM) design pattern for better maintainability and scalability.
+## 📌 Overview
+This is a **Java-based Selenium WebDriver automation testing framework** built using the **Page Object Model (POM)** for better maintainability and scalability.  
+The framework includes:
+- ✅ Search functionality test
+- 🔜 Account Page tests (future)
+- 🔜 Cart Page tests (future)
 
-<<<<<<< HEAD
-✅ Current Test Coverage 🛠 Tech Stack •	Java 17+ •	Selenium WebDriver •	JUnit 4 •	Maven (optional for dependency management) •	Firefox with Geckodrive •	🔍 Search Functionality Test •	🧾 (Planned) Account Page Tests
-•	🛒 (Planned) Cart Page Test
+This project is integrated with **Jenkins CI/CD** for automated builds and tests whenever code is pushed to GitHub.
 
-🛠 Tech Stack •	Java 17+
-•	Selenium WebDriver
-•	JUnit 4
-•	Maven (optional for dependency management)
-•	Firefox with Geckodriver
+---
 
-📂 Project Structure
+## 🛠 Tech Stack
+- Java 17+
+- Selenium WebDriver
+- JUnit 4
+- Maven
+- Firefox (Geckodriver)
+- Jenkins
+- GitHub
 
-selenium-java-automation-framework/
-│
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   ├── pages/      # Page classes (Page.java, AccountPage.java, CartPage.java)
-│   │   │   ├── utils/      # Utility classes (DriverManager.java, Links.java)
-│   │   │   ├── widgets/    # Reusable components (SearchResults.java)
-│
-│   ├── test/
-│       ├── java/
-│       │   ├── search/     # Search tests (SearchTests.java)
-│       │   ├── utils/      # Base test class (BaseTests.java)
-│
-└── resources/        # Geckodriver and other test resources
+---
 
-⚙️ Setup Instructions
-
-1️⃣ Install Dependencies
-
-Make sure you have:
-•	Java 17+ installed and configured in your PATH
-•	Firefox browser installed
-•	Geckodriver placed in resources/ or set in your system PATH
-
-3️⃣ Run Tests from Eclipse
-1.	Open the project in Eclipse
-2.	Right-click the test class (e.g., SearchTests.java)
-3.	Select Run As → JUnit Test
-
-4️⃣ Run Tests from Terminal (Optional - if Maven is used)
-
-mvn test
-
-
-🚀 Future Improvements
-•	Add Account Page test cases
-•	Add Cart Page test cases
-•	Integrate with Jenkins CI/CD pipeline
-•	Generate Allure Reports for test execution results
-
-⸻
-
-🤝 Contributing
-
-Contributions are welcome! 🚀
-	1.	Fork the repository
-	2.	Create a new branch for your feature or bug fix
-	3.	Commit your changes
-	4.	Push to your branch and submit a Pull Request
-
-	
-=======
-✅ Current Test Coverage 
-🛠 Tech Stack 
-• Java 17+ 
-• Selenium WebDriver 
-• JUnit 4 
-• Maven (optional for dependency management) 
-• Firefox with Geckodrive 
-•🔍 Search Functionality Test
-•🧾 (Planned) Account Page Tests
-• 🛒 (Planned) Cart Page Test
-
-🛠 Tech Stack
-• Java 17+
-• Selenium WebDriver
-• JUnit 4
-• Maven (optional for dependency management)
-• Firefox with Geckodriver
-
-📂 Project Structure
+## 📂 Project Structure
 
 selenium-java-automation-framework/
-│
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   ├── pages/      # Page classes (Page.java, AccountPage.java, CartPage.java)
-│   │   │   ├── utils/      # Utility classes (DriverManager.java, Links.java)
-│   │   │   ├── widgets/    # Reusable components (SearchResults.java)
-│
-│   ├── test/
-│       ├── java/
-│       │   ├── search/     # Search tests (SearchTests.java)
-│       │   ├── utils/      # Base test class (BaseTests.java)
-│
-└── resources/        # Geckodriver and other test resources
+src/
+  main/
+    java/
+      pages/        # Page classes (Page.java, AccountPage.java, CartPage.java)
+      utils/        # Utility classes (DriverManager.java, Links.java)
+      widgets/      # Reusable components (SearchResults.java)
+  test/
+    java/
+      search/       # Search tests (SearchTests.java)
+      utils/        # Base test class
+resources/          # Geckodriver and other resources
+README.md
+pom.xml             # Maven configuration file└── README.md
 
-⚙️ Setup Instructions
+---
 
-1️⃣ Install Dependencies
+## ⚙️ Setup Instructions
 
+### 1️⃣ Install Dependencies
 Make sure you have:
-• Java 17+ installed and configured in your PATH
-• Firefox browser installed
-• Geckodriver placed in resources/ or set in your system PATH
+- Java 17+
+- Maven
+- Firefox browser
+- Geckodriver (inside `resources/` folder or in system PATH)
 
-3️⃣ Run Tests from Eclipse
-1. Open the project in Eclipse
-2. Right-click the test class (e.g., SearchTests.java)
-3. Select Run As → JUnit Test
+### 2️⃣ Clone the Repository
+git clone https://github.com/YOUR-USERNAME/selenium-java-automation-framework.git  
+cd selenium-java-automation-framework
 
-4️⃣ Run Tests from Terminal (Optional - if Maven is used)
+### 3️⃣ Run Tests in Eclipse
+- Open the project in Eclipse
+- Right-click on the test class (e.g., SearchTests.java)
+- Select Run As → JUnit Test
 
-mvn test
+### 4️⃣ Run Tests from Terminal (Maven)
+mvn clean test
 
-🚀 Future Improvements
-• Add Account Page test cases
-• Add Cart Page test cases
-• Integrate with Jenkins CI/CD pipeline
-• Generate Allure Reports for test execution results
+---
 
-⸻
->>>>>>> refs/remotes/origin/master
-🖥 Selenium Java Automation Framework
+## 🔄 CI/CD Pipeline with Jenkins
+This framework is configured to run automatically in Jenkins when code is pushed to GitHub.
 
-📌 Overview
+---
 
-This is a Java-based Selenium WebDriver automation testing framework.
-It uses JUnit 4 as the test runner and follows the Page Object Model (POM) design pattern for better maintainability and scalability.
+### Step 1 – Install Jenkins Plugins
+Go to **Manage Jenkins → Plugins → Available** and install:
+- Git Plugin
+- GitHub Plugin
+- Maven Integration Plugin  
 
-✅ Current Test Coverage 
-🛠 Tech Stack 
-• Java 17+ 
-• Selenium WebDriver 
-• JUnit 4 
-• Maven (optional for dependency management) 
-• Firefox with Geckodrive 
-•🔍 Search Functionality Test
-•🧾 (Planned) Account Page Tests
-• 🛒 (Planned) Cart Page Test
+📸 – Installed Plugins page
 
-🛠 Tech Stack
-• Java 17+
-• Selenium WebDriver
-• JUnit 4
-• Maven (optional for dependency management)
-• Firefox with Geckodriver
+---
 
-📂 Project Structure
+### Step 2 – Create a Jenkins Job
+1. Click **New Item** → Select **Freestyle Project**
+2. Name it (e.g., Selenium-Java-Automation)
+3. Under **Source Code Management**, select Git and paste your repo URL:
+   https://github.com/YOUR-USERNAME/selenium-java-automation-framework.git
+4. Add GitHub credentials using your **Personal Access Token**.
 
-selenium-java-automation-framework/
-│
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   ├── pages/      # Page classes (Page.java, AccountPage.java, CartPage.java)
-│   │   │   ├── utils/      # Utility classes (DriverManager.java, Links.java)
-│   │   │   ├── widgets/    # Reusable components (SearchResults.java)
-│
-│   ├── test/
-│       ├── java/
-│       │   ├── search/     # Search tests (SearchTests.java)
-│       │   ├── utils/      # Base test class (BaseTests.java)
-│
-└── resources/        # Geckodriver and other test resources
+📸– Job Configuration with GitHub repo
 
-⚙️ Setup Instructions
+---
 
-1️⃣ Install Dependencies
+### Step 3 – Configure Maven Build
+- Go to **Build Steps**
+- Select **Invoke top-level Maven targets**
+- Set:
+  Goals: clean test
 
-Make sure you have:
-• Java 17+ installed and configured in your PATH
-• Firefox browser installed
-• Geckodriver placed in resources/ or set in your system PATH
+📸Maven Build Step
 
-3️⃣ Run Tests from Eclipse
-1. Open the project in Eclipse
-2. Right-click the test class (e.g., SearchTests.java)
-3. Select Run As → JUnit Test
+---
 
-4️⃣ Run Tests from Terminal (Optional - if Maven is used)
+### Step 4 – Build the Job
+- Click **Build Now**
+- Check **Console Output**
+- ✅ Expect **BUILD SUCCESS**
 
-mvn test
+📸Successful Build
 
-🚀 Future Improvements
-• Add Account Page test cases
-• Add Cart Page test cases
-• Integrate with Jenkins CI/CD pipeline
-• Generate Allure Reports for test execution results
 
-⸻
+## 📊 Pipeline Flow Diagram
+       ┌───────────────┐
+       │   Developer   │
+       │   pushes to   │
+       │   GitHub      │
+       └──────┬────────┘
+              │  Webhook Trigger
+              ▼
+       ┌───────────────┐
+       │   Jenkins     │
+       │  Pull Latest  │
+       │   Code        │
+       └──────┬────────┘
+              │  Run Maven Build & Tests
+              ▼
+       ┌───────────────┐
+       │   JUnit       │
+       │ Test Results  │
+       └──────┬────────┘
+              │  Build Status
+              ▼
+       ┌───────────────┐
+       │  SUCCESS /    │
+       │   FAILURE     │
+       └───────────────┘
+
+---
+
+##👩🏾‍💻 Author
+Laniqua Webster  
+🐙 GitHub: https://github.com/LW-SheEngineers
