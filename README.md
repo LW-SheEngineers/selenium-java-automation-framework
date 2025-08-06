@@ -1,143 +1,85 @@
-# 🚀 Selenium Java Automation Framework
+# 🚀 Selenium Java Automation Framework with Jenkins Integration
 
----
-
-## 📌 Overview
-This is a **Java-based Selenium WebDriver automation testing framework** built using the **Page Object Model (POM)** for better maintainability and scalability.  
-The framework includes:
-- ✅ Search functionality test
-- 🔜 Account Page tests (future)
-- 🔜 Cart Page tests (future)
-
-This project is integrated with **Jenkins CI/CD** for automated builds and tests whenever code is pushed to GitHub.
+Welcome to my **Java Selenium Automation Framework**! 🎯  
+This project was built **from scratch** to demonstrate my skills in **test automation, CI/CD integration, and problem-solving**.
 
 ---
 
 ## 🛠 Tech Stack
-- Java 17+
-- Selenium WebDriver
-- JUnit 4
-- Maven
-- Firefox (Geckodriver)
-- Jenkins
-- GitHub
+- **Language:** Java ☕
+- **Framework:** JUnit 🧪
+- **Automation Tool:** Selenium WebDriver 🌐
+- **Build Tool:** Maven 📦
+- **CI/CD Tool:** Jenkins ⚙️
+- **Version Control:** Git & GitHub 🐙
 
 ---
 
-## 📂 Project Structure
-
-selenium-java-automation-framework/
-src/
-  main/
-    java/
-      pages/        # Page classes (Page.java, AccountPage.java, CartPage.java)
-      utils/        # Utility classes (DriverManager.java, Links.java)
-      widgets/      # Reusable components (SearchResults.java)
-  test/
-    java/
-      search/       # Search tests (SearchTests.java)
-      utils/        # Base test class
-resources/          # Geckodriver and other resources
-README.md
-pom.xml             # Maven configuration file└── README.md
+## 📌 Project Overview
+This framework automates test cases for the [SuperQA Demo Store](http://demostore.superqa.com) 🛒.  
+It includes:
+- **Page Object Model (POM)** for maintainable code structure 📂
+- **Reusable Base Test Class** for setup & teardown ⚡
+- **Multiple Test Classes** covering:
+  - Search functionality 🔍
+  - Login scenarios (valid & invalid) 🔑
+  - Cart operations 🛍️
 
 ---
 
-## ⚙️ Setup Instructions
+## ⚠️ Challenges & How I Overcame Them
 
-### 1️⃣ Install Dependencies
-Make sure you have:
-- Java 17+
-- Maven
-- Firefox browser
-- Geckodriver (inside `resources/` folder or in system PATH)
+Building this framework came with **real-world challenges** that strengthened my skills:
 
-### 2️⃣ Clone the Repository
-git clone https://github.com/YOUR-USERNAME/selenium-java-automation-framework.git  
-cd selenium-java-automation-framework
+1. **Element Locator Issues** 🔎  
+   - Some locators on the demo site changed during testing.  
+   - **Solution:** Used multiple locator strategies (XPath, CSS selectors) and implemented waits for dynamic elements.
 
-### 3️⃣ Run Tests in Eclipse
-- Open the project in Eclipse
-- Right-click on the test class (e.g., SearchTests.java)
-- Select Run As → JUnit Test
+2. **Test Data Management** 📂  
+   - Hardcoding test data made scripts less flexible.  
+   - **Solution:** Externalized test data for easier maintenance and scalability.
 
-### 4️⃣ Run Tests from Terminal (Maven)
+3. **CI/CD Integration with Jenkins** ⚙️  
+   - Initial Jenkins build failed due to missing dependencies.  
+   - **Solution:** Configured `pom.xml` properly, ensured all required dependencies were included, and updated Jenkins job to clean & build before execution.
+
+4. **Cross-Browser Compatibility** 🌍  
+   - Tests behaved differently in Chrome vs. Firefox.  
+   - **Solution:** Added WebDriver configurations to handle multiple browsers.
+
+---
+
+## 🚀 How to Run the Tests
+
+### **1️⃣ Clone the Repository**
+```bash
+git clone https://github.com/LW-SheEngineers/selenium-java-automation-framework.git
+
+2️⃣ Open in IDE
+•	Import as a Maven project in Eclipse or IntelliJ.
+
+3️⃣ Install Dependencies
+
+mvn clean install
+
+4️⃣ Run Tests Locally
+
+mvn test
+
+5️⃣ Run Tests in Jenkins
+•	Create a new Jenkins job.
+•	Link it to your GitHub repo.
+•	Configure build steps to:
+
 mvn clean test
 
----
+	•	Run the build and view results in Jenkins 📊.
 
-## 🔄 CI/CD Pipeline with Jenkins
-This framework is configured to run automatically in Jenkins when code is pushed to GitHub.
-
----
-
-### Step 1 – Install Jenkins Plugins
-Go to **Manage Jenkins → Plugins → Available** and install:
-- Git Plugin
-- GitHub Plugin
-- Maven Integration Plugin  
-
-📸 – Installed Plugins page
-
----
-
-### Step 2 – Create a Jenkins Job
-1. Click **New Item** → Select **Freestyle Project**
-2. Name it (e.g., Selenium-Java-Automation)
-3. Under **Source Code Management**, select Git and paste your repo URL:
-   https://github.com/YOUR-USERNAME/selenium-java-automation-framework.git
-4. Add GitHub credentials using your **Personal Access Token**.
-
-📸– Job Configuration with GitHub repo
-
----
-
-### Step 3 – Configure Maven Build
-- Go to **Build Steps**
-- Select **Invoke top-level Maven targets**
-- Set:
-  Goals: clean test
-
-📸Maven Build Step
-
----
-
-### Step 4 – Build the Job
-- Click **Build Now**
-- Check **Console Output**
-- ✅ Expect **BUILD SUCCESS**
-
-📸Successful Build
+💡 Key Learning Outcomes
+•	Gained hands-on experience with framework design principles.
+•	Learned to debug & troubleshoot automation issues effectively.
+•	Integrated automation scripts into a CI/CD pipeline with Jenkins.
+•	Improved ability to adapt to changing application behavior.
 
 
-## 📊 Pipeline Flow Diagram
-       ┌───────────────┐
-       │   Developer   │
-       │   pushes to   │
-       │   GitHub      │
-       └──────┬────────┘
-              │  Webhook Trigger
-              ▼
-       ┌───────────────┐
-       │   Jenkins     │
-       │  Pull Latest  │
-       │   Code        │
-       └──────┬────────┘
-              │  Run Maven Build & Tests
-              ▼
-       ┌───────────────┐
-       │   JUnit       │
-       │ Test Results  │
-       └──────┬────────┘
-              │  Build Status
-              ▼
-       ┌───────────────┐
-       │  SUCCESS /    │
-       │   FAILURE     │
-       └───────────────┘
 
----
-
-##👩🏾‍💻 Author
-Laniqua Webster  
-🐙 GitHub: https://github.com/LW-SheEngineers
